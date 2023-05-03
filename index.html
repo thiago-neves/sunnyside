@@ -5,117 +5,32 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-	<link rel="stylesheet" href="/style/main.css">
 	<title>Sunnyside agency landing page</title>
+	<link rel="stylesheet" href="./styles/main.css">
+	<script src="./javascript/main.js"></script>
 	<script src="https://cdn.tailwindcss.com"></script>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap"
-		rel="stylesheet">
-	<style>
-		.barlow {
-			font-family: 'Barlow', sans-serif;
-		}
-
-		.fraunces {
-			font-family: 'Fraunces', serif;
-		}
-
-		.dark-moderate-cyan {
-			background-color: hsl(167, 44%, 70%)
-		}
-
-		.dark-blue {
-			color: hsl(198, 62%, 26%);
-		}
-
-		.dark-desaturated-cyan {
-			color: #25564b
-		}
-
-		.very-dark-desaturated-blue {
-			color: hsl(212, 27%, 19%)
-		}
-
-		.very-dark-grayish-blue {
-			color: hsl(213, 9%, 39%)
-		}
-
-		.dark-grayish-blue {
-			color: hsl(232, 10%, 55%)
-		}
-
-		.grayish-blue {
-			color: hsl(210, 4%, 67%)
-		}
-
-		.learn-more {
-			position: relative;
-		}
-
-		.learn-more::before {
-			position: relative;
-			top: 24px;
-			margin: auto;
-			display: block;
-			content: '';
-			width: 135px;
-			height: 10px;
-			border-radius: 10px;
-		}
-
-		@media screen and (min-width: 764px) {
-			.learn-more::before {
-				margin: 0;
-				margin-left: -9px;
-			}
-		}
-
-		.soft-red.learn-more::before {
-			background-color: hsla(7, 99%, 70%, .3)
-		}
-
-		.yellow.learn-more::before {
-			background-color: hsla(51, 100%, 49%, .3);
-		}
-
-		h1 {
-			letter-spacing: .2em;
-			font-weight: 900;
-		}
-
-		.letter-spacing-2em {
-			letter-spacing: .3em;
-		}
-
-		p {
-			font-size: 18px;
-		}
-		.bg-articles {
-			background-color: #fffbf8;
-		}
-	</style>
 </head>
 
-<body class="shadow-2xl bg-gray-50" style="max-width: 1440px; margin: auto;">
+<body>
 	<section class="relative">
-		<nav class="absolute w-full flex justify-between items-center p-6 md:p-10 z-10">
+		<nav class="navigation md:px-14 md:py-4">
 			<img class="md:h-8" src="./images/logo.svg" alt="">
-			<img class="h-5 cursor-pointer md:hidden" src="./images/icon-hamburger.svg" alt="">
-			<span class="hidden md:flex gap-12">
-				<a class="text-white barlow text-lg" href="">About</a>
-				<a class="text-white barlow text-lg" href="">Services</a>
-				<a class="text-white barlow text-lg" href="">Projects</a>
-				<a class="text-white barlow text-lg" href="">Contact</a>
+			<img onclick="openMenu()" class="hamburguer md:hidden" src="./images/icon-hamburger.svg" alt="">
+			<span class="triangle menu md:hidden"></span>
+			<span class="links menu md:bg-transparent md:flex-row md:static md:flex md:gap-12">
+				<a class="link md:text-white lg:text-base barlow" href="">About</a>
+				<a class="link md:text-white lg:text-base barlow" href="">Services</a>
+				<a class="link md:text-white lg:text-base barlow" href="">Projects</a>
+				<a class="special-link fraunces md:bg-white md:hover:text-white md:hover:bg-white/30 lg:text-sm" href="">Contact</a>
 			</span>
 		</nav>
 		<header>
 			<div class="relative">
 				<img class="md:hidden" src="./images/mobile/image-header.jpg" alt="">
 				<img class="hidden md:block" src="./images/desktop/image-header.jpg" alt="">
-				<div class="absolute top-36 md:top-52 text-center w-full px-6">
-					<h1 class=" text-white text-4xl md:text-6xl uppercase fraunces">We are creatives</h1>
-					<img class="mx-auto mt-16 md:mt-24" src="./images/icon-arrow-down.svg" alt="">
+				<div class="header-content md:top-48">
+					<h1 class="header-title fraunces lg:text-5xl">We are creatives</h1>
+					<img class="header-arrow-down lg:mt-24" src="./images/icon-arrow-down.svg" alt="">
 				</div>
 			</div>
 		</header>
@@ -124,35 +39,34 @@
 		<article class="md:grid md:grid-cols-2 bg-articles">
 			<img class="md:hidden" src="./images/mobile/image-transform.jpg" alt="">
 			<img class="hidden md:block order-2" src="./images/desktop/image-transform.jpg" alt="">
-			<div class="my-8 p-6 lg:px-28 text-center md:text-left md:my-auto">
-				<h2 class="text-4xl lg:text-5xl fraunces very-dark-desaturated-blue">Transform your brand</h2>
-				<p class="my-6 text-center md:text-left dark-grayish-blue barlow">
+			<div class="article-content lg:px-28 md:text-left md:my-auto">
+				<h2 class="article-title fraunces lg:text-4xl">Transform your brand</h2>
+				<p class="article-paragraph barlow lg:pr-2 md:text-left">
 					We are a full-service creative agency specializing in helping brands grow fast.
 					Engage your clients through compelling visuals that do most of the marketing for you.
 				</p>
-				<a class="mb-6 uppercase fraunces very-dark-desaturated-blue learn-more yellow" href="">Learn more</a>
+				<a class="article-link fraunces yellow " href="">Learn more</a>
 			</div>
 		</article>
 		<article class="md:grid md:grid-cols-2 bg-articles">
 			<img class="md:hidden" src="./images/mobile/image-stand-out.jpg" alt="">
 			<img class="hidden md:block" src="./images/desktop/image-stand-out.jpg" alt="">
-			<div class="my-8 p-6 lg:px-28 text-center md:text-left md:my-auto">
-				<h2 class="text-4xl lg:text-5xl fraunces very-dark-desaturated-blue">Stand out to the right audience</h2>
-				<p class="my-6 text-center md:text-left dark-grayish-blue barlow">
+			<div class="article-content lg:px-28 md:text-left md:my-auto">
+				<h2 class="article-title fraunces lg:text-4xl">Stand out to the right audience</h2>
+				<p class="article-paragraph barlow lg:pr-2 md:text-left">
 					Using a collaborative formula of designers, researchers, photographers, videographers, and copywriters, we’ll
-					build
-					and extend your brand in digital places.
+					build and extend your brand in digital places.
 				</p>
-				<a class="mb-6 uppercase fraunces very-dark-desaturated-blue learn-more soft-red" href="">Learn more</a>
+				<a class="article-link fraunces soft-red" href="">Learn more</a>
 			</div>
 		</article>
 		<div class="md:grid md:grid-cols-2">
 			<article class="relative">
 				<img class="md:hidden" src="./images/mobile/image-graphic-design.jpg" alt="">
 				<img class="hidden md:block" src="./images/desktop/image-graphic-design.jpg" alt="">
-				<div class="my-8 p-4 text-center absolute bottom-0 md:max-w-sm md:left-0 md:right-0 md:mx-auto">
-					<h2 class="text-3xl fraunces dark-desaturated-cyan">Graphic design</h2>
-					<p class="my-6 text-center text-base dark-desaturated-cyan barlow">
+				<div class="article-inside-content md:max-w-sm md:left-0 md:right-0 md:mx-auto">
+					<h2 class="article-inside-title fraunces dark-desaturated-cyan">Graphic design</h2>
+					<p class="article-inside-paragraph dark-desaturated-cyan barlow lg:px-6">
 						Great design makes you memorable. We deliver artwork that underscores your brand message and captures
 						potential clients’ attention.
 					</p>
@@ -161,71 +75,81 @@
 			<article class="relative">
 				<img class="md:hidden" src="./images/mobile/image-photography.jpg" alt="">
 				<img class="hidden md:block" src="./images/desktop/image-photography.jpg" alt="">
-				<div class="my-8 p-4 text-center absolute bottom-0 md:max-w-sm md:left-0 md:right-0 md:mx-auto">
-					<h2 class="text-3xl fraunces dark-blue">Photography</h2>
-					<p class="my-6 text-center text-base dark-blue barlow">
-						Increase your credibility by getting the most stunning, high-quality photos that improve your business image.
+				<div class="article-inside-content md:max-w-sm md:left-0 md:right-0 md:mx-auto">
+					<h2 class="article-inside-title fraunces dark-blue">Photography</h2>
+					<p class="article-inside-paragraph dark-blue barlow lg:px-6">
+						Increase your credibility by getting the most stunning, high-quality photos that improve your business
+						image.
 					</p>
 				</div>
 			</article>
 		</div>
 	</section>
-	<section class="p-6 bg-articles py-16 md:py-32">
-		<h3 class="md:text-xl uppercase text-center fraunces letter-spacing-2em grayish-blue font-extrabold">
+	<section class="testimonials md:py-32">
+		<h3 class="testimonials-title fraunces md:text-lg">
 			Client testimonials
 		</h3>
-		<div class="flex flex-col md:flex-row md:gap-8 justify-center items-center">
-			<article class="text-center" style="max-width: 21.8em;">
-				<img class="rounded-full h-20 md:h-16 mx-auto mb-8 mt-16 md:mt-20" src="./images/image-emily.jpg" alt="">
-				<p class="my-6 md:my-16 text-center very-dark-grayish-blue barlow">
-					We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always hit.
+		<div class="testimonial-articles md:flex-row">
+			<article class="testimonial-article">
+				<img class="testimonial-image md:mt-20" src="./images/image-emily.jpg" alt="">
+				<p class="testimonial-paragraph barlow md:my-16 md:mx-4">
+					We put our trust in Sunnyside and they delivered, making sure our needs were met and deadlines were always
+					hit.
 				</p>
-				<strong class="fraunces text-lg font-extrabold">Emily R.</strong>
-				<p class="barlow dark-grayish-blue mt-2 text-sm">Marketing Director</p>
+				<strong class="testimonial-author-name fraunces">Emily R.</strong>
+				<p class="testimonial-author-role barlow">Marketing Director</p>
 			</article>
-			<article class="text-center" style="max-width: 21.8em;">
-				<img class="rounded-full h-20 md:h-16 mx-auto mb-8 mt-16 md:mt-20" src="./images/image-thomas.jpg" alt="">
-				<p class="my-6 md:my-16 text-center very-dark-grayish-blue barlow">
+			<article class="testimonial-article">
+				<img class="testimonial-image md:mt-20" src="./images/image-thomas.jpg" alt="">
+				<p class="testimonial-paragraph barlow md:my-16 md:mx-4">
 					Sunnyside’s enthusiasm coupled with their keen interest in our brand’s success made it a satisfying and
 					enjoyable experience.
 				</p>
-				<strong class="fraunces text-lg font-extrabold">Thomas S.</strong>
-				<p class="barlow dark-grayish-blue mt-2 text-sm">Chief Operating Officer</p>
+				<strong class="testimonial-author-name fraunces">Thomas S.</strong>
+				<p class="testimonial-author-role barlow">Chief Operating Officer</p>
 			</article>
-			<article class="text-center" style="max-width: 21.8em;">
-				<img class="rounded-full h-20 md:h-16 mx-auto mt-16 md:mt-20" src="./images/image-jennie.jpg" alt="">
-				<p class="my-6 md:my-16 text-center very-dark-grayish-blue barlow">
+			<article class="testimonial-article">
+				<img class="testimonial-image md:mt-20" src="./images/image-jennie.jpg" alt="">
+				<p class="testimonial-paragraph barlow md:my-16 md:mx-4">
 					Incredible end result! Our sales increased over 400% when we worked with Sunnyside. Highly recommended!
 				</p>
-				<strong class="fraunces text-lg font-extrabold">Jennie F.</strong>
-				<p class="barlow dark-grayish-blue mt-2 text-sm">Business Owner</p>
+				<strong class="testimonial-author-name fraunces">Jennie F.</strong>
+				<p class="testimonial-author-role barlow">Business Owner</p>
 			</article>
 		</div>
 	</section>
-	<section class="grid grid-cols-2 md:hidden">
+	<section class="gallery-grid md:hidden">
 		<img src="./images/mobile/image-gallery-milkbottles.jpg" alt="">
 		<img src="./images/mobile/image-gallery-orange.jpg" alt="">
 		<img src="./images/mobile/image-gallery-cone.jpg" alt="">
 		<img src="./images/mobile/image-gallery-sugar-cubes.jpg" alt="">
 	</section>
-	<section class="hidden md:flex">
+	<section class="gallery-flex md:flex">
 		<img class="w-full" src="./images/desktop/image-gallery-milkbottles.jpg" alt="">
 		<img class="w-full" src="./images/desktop/image-gallery-orange.jpg" alt="">
 		<img class="w-full" src="./images/desktop/image-gallery-cone.jpg" alt="">
 		<img class="w-full" src="./images/desktop/image-gallery-sugarcubes.jpg" alt="">
 	</section>
-	<footer class="dark-moderate-cyan px-6 py-16">
-		<img class="h-8 mx-auto" src="./images/logo-footer.svg" alt="">
-		<div class="flex justify-between my-14 md:w-fit md:gap-16 md:mx-auto">
-			<a class="dark-desaturated-cyan barlow text-lg" href="">About</a>
-			<a class="dark-desaturated-cyan barlow text-lg" href="">Services</a>
-			<a class="dark-desaturated-cyan barlow text-lg" href="">Projects</a>
+	<footer class="footer">
+		<img class="footer-logo" src="./images/logo-footer.svg" alt="">
+		<div class="footer-links md:gap-16">
+			<a class="footer-link barlow hover:text-white text-base" href="">About</a>
+			<a class="footer-link barlow hover:text-white text-base" href="">Services</a>
+			<a class="footer-link barlow hover:text-white text-base" href="">Projects</a>
 		</div>
-		<div class="py-8 flex gap-8 justify-center">
-			<img src="./images/icon-facebook.svg" alt="">
-			<img src="./images/icon-instagram.svg" alt="">
-			<img src="./images/icon-twitter.svg" alt="">
-			<img src="./images/icon-pinterest.svg" alt="">
+		<div class="footer-socials">
+			<a href="">
+				<glyph class="facebook" />
+			</a>
+			<a href="">
+				<glyph class="instagram" />
+			</a>
+			<a href="">
+				<glyph class="twitter" />
+			</a>
+			<a href="">
+				<glyph class="pinterest" />
+			</a>
 		</div>
 	</footer>
 </body>
